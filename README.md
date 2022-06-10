@@ -77,7 +77,7 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 ### Useful resources
 
 - [CSS-Tricks box-shadow](https://css-tricks.com/almanac/properties/b/box-shadow/) - This helped me for revising basics of box-shadow. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+<!-- - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept. -->
 
 ## Author
 
