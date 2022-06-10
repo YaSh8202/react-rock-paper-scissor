@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/YaSh8202/react-rock-paper-scissor)
-- Live Site URL: [Add live site URL here](https://react-rock-paper-scissor.vercel.app/)
+- [Solution URL](https://github.com/YaSh8202/react-rock-paper-scissor)
+- [Live Site URL](https://react-rock-paper-scissor.vercel.app/)
 
 ## My process
 
