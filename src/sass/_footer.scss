@@ -1,0 +1,33 @@
+.footer {
+  width: 100vw;
+
+  .attribution {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 1rem;
+    color: lighten($dark-text,20%);
+    a{
+      color: lighten($dark-text,40%);
+      text-decoration: none;
+    }
+  }
+  .rules {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 1rem 3rem;
+    border: 3px solid $header-outline;
+    color: lighten($header-outline, 20%);
+    background: none;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: .4rem;
+    text-transform: uppercase;
+    &:hover{
+      cursor: pointer;
+      background-color: rgba(#fff, 0.8);
+      color: $dark-text;
+    }
+  }
+}

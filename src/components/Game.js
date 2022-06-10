@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const Game = ({ myChoice, score, setScore }) => {
   const [houseChoice, setHouseChoice] = useState("");
   const [playerWin, setPlayerWin] = useState("");
+  const [counter, setCounter] = useState(3);
 
   const setHouse = () => {
     const choices = ["rock", "paper", "scissors"];
@@ -44,20 +45,63 @@ const Game = ({ myChoice, score, setScore }) => {
   };
 
   useEffect(() => {
-    result();
-  }, [houseChoice]);
+    const timer =
+      counter > 0
+        ? setInterval(() => {
+            setCounter((prev) => prev - 1);
+          }, 1000)
+        : result();
+    return () => {
+      clearInterval(timer);
+    };
+  }, [houseChoice, counter]);
 
   return (
     <div className="game">
-      my Choice: {myChoice}
-      <br />
-      House Choice: {houseChoice}
-      <br />
-      Result :{playerWin && <h2>{playerWin}</h2>}
-      <br />
-      <Link to="/" onClick={()=>setHouseChoice("")}>
-        Play Again
-      </Link>
+      <div className="game__you">
+        <span className="text">You Picked</span>
+        <div
+          className={`icon icon--${myChoice} ${
+            playerWin === "win" ? `icon icon--${myChoice}--winner` : ""
+          }`}
+        ></div>
+      </div>
+      {playerWin === "win" && (
+        <div className="game__play">
+          <span className="text">You Win!</span>
+          <Link to="/" className="play-again" onClick={() => setHouse()}>
+            Play Again
+          </Link>
+        </div>
+      )}
+      {playerWin === "lose" && (
+        <div className="game__play">
+          <span className="text">You Lose</span>
+          <Link to="/" className="play-again" onClick={() => setHouse()}>
+            Play Again
+          </Link>
+        </div>
+      )}
+      {playerWin === "draw" && (
+        <div className="game__play">
+          <span className="text">Draw</span>
+          <Link to="/" className="play-again" onClick={() => setHouse()}>
+            Play Again
+          </Link>
+        </div>
+      )}
+      <div className="game__house">
+        <span className="text">The House Picked</span>
+        {counter === 0 ? (
+          <div
+            className={`icon icon--${houseChoice} ${
+              playerWin === "lose" ? `icon icon--${houseChoice}--winner` : ""
+            }`}
+          ></div>
+        ) : (
+          <div className="counter">{counter}</div>
+        )}
+      </div>
     </div>
   );
 };
