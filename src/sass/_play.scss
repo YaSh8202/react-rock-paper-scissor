@@ -4,11 +4,18 @@
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
+  @include breakpoint(){
+    max-width: 80%;
+  }
 
   .triangle{
     position: absolute;
     align-self: center;
     margin-top: 4.5rem;
+    @include breakpoint(){
+      // margin-top: 3rem;
+      width: 200px;
+    }
   }
   .items{
     display: flex;
@@ -19,11 +26,19 @@
       border: 18px solid;
       border-radius: 50%;
       transition: transform .2s;
+      @include breakpoint(){
+        height: 7.5rem;
+        width: 7.5rem;
+        border-width: 12px; 
+      }
       &--paper{
         @include icon($paper,$paper-gradient);
         transform: translateX(1.5rem);
         &:hover{
           transform:translateX(1.5rem) scale(1.1);
+        }
+        @include breakpoint(){
+          transform: translateX(2.25rem) translateY(1rem);
         }
       }
       &--rock{
@@ -32,6 +47,9 @@
         &:hover{
           transform:translatey(13rem) scale(1.1);
         }
+        @include breakpoint(){
+          transform: translateY(10rem);
+        }
       }
       &--scissors{
         @include icon($scissors,$scissors-gradient);
@@ -39,6 +57,10 @@
         &:hover{
           transform:translateX(-1.5rem) scale(1.1);
         }
+        @include breakpoint(){
+          transform: translateX(-2.5rem) translateY(1rem);
+        }
+
       }
     }
   }
