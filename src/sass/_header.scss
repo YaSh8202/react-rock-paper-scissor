@@ -3,10 +3,15 @@
   justify-content: space-between;
   border: 3px solid $header-outline;
   max-width: 43.75rem;
-  width: 80%;
+  width: 100%;
   margin-top: 2rem;
   border-radius: 1rem;
   padding: 1.25rem;
+  @include breakpoint() {
+    max-width: 85%;
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.5rem;
+  }
 
   .text {
     font-size: 2.5rem;
@@ -15,6 +20,11 @@
     flex-direction: column;
     align-items: flex-start;
     line-height: 2.25rem;
+    @include breakpoint() {
+      font-size: 1.25rem;
+      line-height: 1.15rem;
+      justify-content: center;
+    }
   }
 
   .score-box {
@@ -23,10 +33,18 @@
     color: $score-text;
     border-radius: 0.5rem;
     letter-spacing: 2px;
+    @include breakpoint() {
+      padding: 8px 1.2rem;
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+    }
     &__score {
       color: $dark-text;
       font-size: 3.5rem;
       font-weight: 700;
+      @include breakpoint() {
+        font-size: 2.1rem;
+      }
     }
   }
 }
