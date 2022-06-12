@@ -1,7 +1,7 @@
 .play{
   width: 100%;
   position: relative;
-  margin-top: 3rem;
+  margin-top: 4rem;
   display: flex;
   flex-direction: column;
   @include breakpoint(){
@@ -39,6 +39,9 @@
         }
         @include breakpoint(){
           transform: translateX(2.25rem) translateY(1rem);
+          &:hover{
+            transform: translateX(2.25rem) translateY(1rem) scale(1.1);
+          }
         }
       }
       &--rock{
@@ -49,6 +52,9 @@
         }
         @include breakpoint(){
           transform: translateY(10rem);
+          &:hover{
+            transform: translateY(10rem) scale(1.1);
+          }
         }
       }
       &--scissors{
@@ -59,6 +65,9 @@
         }
         @include breakpoint(){
           transform: translateX(-2.5rem) translateY(1rem);
+          &:hover{
+            transform: translateX(-2.5rem) translateY(1rem) scale(1.1);
+          }
         }
 
       }
